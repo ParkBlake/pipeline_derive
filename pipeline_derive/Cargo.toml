@@ -1,0 +1,15 @@
+[package]
+name = "pipeline_derive"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+repository = "https://github.com/ParkBlake/pipeline_derive"
+authors = ["ParkBlake <blake.r.park@gmail.com>"]
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = { version = "2", features = ["full"] }
+quote = "1"
+proc-macro2 = "1"

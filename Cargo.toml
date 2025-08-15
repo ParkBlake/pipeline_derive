@@ -1,0 +1,3 @@
+[workspace]
+members = ["pipeline_derive", "pipeline_example"]
+resolver = "3"
