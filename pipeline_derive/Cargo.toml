@@ -4,7 +4,14 @@ version = "0.1.0"
 edition = "2024"
 license = "MIT"
 repository = "https://github.com/ParkBlake/pipeline_derive"
-authors = ["ParkBlake <blake.r.park@gmail.com>"]
+authors = ["Blake Park <blake.r.park@gmail.com>"]
+description = "A procedural macro crate to build generic data processing pipelines in Rust."
+keywords = ["proc-macro", "pipeline", "data-processing", "macros"]
+categories = ["development-tools", "macros", "data-processing"]
+readme = "README.md"
+homepage = "https://github.com/ParkBlake/pipeline_derive"
+documentation = "https://docs.rs/pipeline_derive"
+rust-version = "1.85.0"
 
 [lib]
 proc-macro = true
