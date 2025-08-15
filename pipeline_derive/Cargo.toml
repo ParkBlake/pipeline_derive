@@ -7,7 +7,10 @@ repository = "https://github.com/ParkBlake/pipeline_derive"
 authors = ["Blake Park <blake.r.park@gmail.com>"]
 description = "A procedural macro crate to simplify building monadic-like data pipelines in Rust."
 keywords = ["proc-macro", "pipeline", "data-processing", "macros", "monadic"]
-categories = ["development-tools", "macros", "data-processing"]
+categories = [
+    "development-tools",
+    "development-tools::procedural-macro-helpers",
+]
 readme = "README.md"
 homepage = "https://github.com/ParkBlake/pipeline_derive"
 documentation = "https://docs.rs/pipeline_derive"
