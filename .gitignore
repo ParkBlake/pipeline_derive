@@ -1,0 +1,16 @@
+/target/
+/target/doc/
+/*.rs.bk
+*~
+*.swp
+*.swo
+*.tmp
+.idea/
+.vscode/
+*.iml
+.DS_Store
+*.log
+*.gcda
+*.gcno
+*.gcov
+.crate_graph.json

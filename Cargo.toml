@@ -1,0 +1,25 @@
+[package]
+name = "pipeline_derive"
+version = "0.1.1"
+edition = "2024"
+license = "MIT"
+repository = "https://github.com/ParkBlake/pipeline_derive"
+authors = ["Blake Park <blake.r.park@gmail.com>"]
+description = "A procedural macro crate to simplify building monadic-like data pipelines in Rust."
+keywords = ["proc-macro", "pipeline", "data-processing", "macros", "monadic"]
+categories = [
+    "development-tools",
+    "development-tools::procedural-macro-helpers",
+]
+readme = "README.md"
+homepage = "https://github.com/ParkBlake/pipeline_derive"
+documentation = "https://docs.rs/pipeline_derive"
+rust-version = "1.85.0"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = { version = "2.0", features = ["full", "parsing"] }
+quote = "1.0"
+proc-macro2 = "1.0"
