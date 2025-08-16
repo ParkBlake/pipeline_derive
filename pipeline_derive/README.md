@@ -6,12 +6,21 @@ A procedural macro crate providing a `#[derive(Pipeline)]` macro to build **_mon
 
 This crate enables you to wrap a single `Option<T>` field in a struct and automatically generate convenient pipeline methods that chain multiple processing steps. Each step is a closure consuming the value and returning `Option<T>`, allowing early termination on failure (`None`), embodying Rust’s **_monadic pattern_** with `Option`.
 
+New attributes let you customise behaviour:
+
+- `#[pipeline(skip = true)]` — generate pipeline methods that always return `None`, effectively skipping processing.
+- `#[pipeline(timeout = <milliseconds>)]` — pipeline methods print timeout info when called.
+
+Generated pipeline methods now take `&self` and internally clone the inner value as needed, so the original struct can be used without transferring ownership. The macro automatically adds the required `T: Clone` trait bound on the generic type.
+
 ## Features
 
 - Automatically generate pipeline methods (`process3`, `process4`) for 2 or 3-step pipelines.
-- Each pipeline step is a closure `FnOnce(T) -> Option<T>`.
+- Pipeline steps are closures `FnOnce(T) -> Option<T>`.
 - Pipeline chains steps with short-circuiting via `Option::and_then`.
-- Simple, minimal API.
+- Attributes to skip processing or log timeout info.
+- Methods take `&self` and clone inner value, improving ergonomics.
+- Minimal, monadic-style API.
 
 ## Usage Example
 
@@ -19,8 +28,9 @@ This crate enables you to wrap a single `Option<T>` field in a struct and automa
 use pipeline_derive::Pipeline;
 
 #[derive(Pipeline)]
-struct MyPipeline {
-    value: Option<i32>,
+#[pipeline(timeout = 1000)]
+struct MyPipeline<T> {
+    value: Option<T>,
 }
 
 fn main() {

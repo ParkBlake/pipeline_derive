@@ -1,6 +1,6 @@
 [package]
 name = "pipeline_derive"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 license = "MIT"
 repository = "https://github.com/ParkBlake/pipeline_derive"
@@ -20,6 +20,6 @@ rust-version = "1.85.0"
 proc-macro = true
 
 [dependencies]
-syn = { version = "2", features = ["full"] }
-quote = "1"
-proc-macro2 = "1"
+syn = { version = "2.0", features = ["full", "parsing"] }
+quote = "1.0"
+proc-macro2 = "1.0"
